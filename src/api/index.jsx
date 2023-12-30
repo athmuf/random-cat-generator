@@ -12,13 +12,11 @@ const fetchRandomCat = async () => {
     try {
       const response = await fetch(url, options);
       const result = await response.text();
-      console.log(result)
       getData.data = JSON.parse(result);
       getData.status = "success";
     } catch (error) {
       getData;
       getData.status = "failed";
-      console.error(error);
     }
     return getData;
   };
