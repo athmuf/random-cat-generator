@@ -1,5 +1,5 @@
 const fetchRandomCat = async () => {
-    const url = `${import.meta.env.VITE_APP_GENERATE_CAT_API}`;
+    const url = `${import.meta.env.VITE_APP_CAT_API_URL}`;
     const options = {
       method: "GET",
       headers: {
@@ -12,6 +12,7 @@ const fetchRandomCat = async () => {
     try {
       const response = await fetch(url, options);
       const result = await response.text();
+      console.log(result)
       getData.data = JSON.parse(result);
       getData.status = "success";
     } catch (error) {
